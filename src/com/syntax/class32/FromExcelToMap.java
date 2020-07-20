@@ -25,13 +25,16 @@ public class FromExcelToMap {
 		Workbook book = new XSSFWorkbook(fis);
 		// accessing the sheet, sheet name we pass to the parameter as argument
 		Sheet sheet = book.getSheet("Sheet1");
+		//Sheet sheet2 = book.getSheetAt(0);
+		
+		
 		
 		List<Map<String, String>> maps = new ArrayList<>();
 		// number of rows
 		int rows = sheet.getPhysicalNumberOfRows();
 		int cols = sheet.getRow(0).getLastCellNum();
 		
-		
+			
 		for(int r=1; r<rows; r++) {
 			Map<String, String> map = new LinkedHashMap<>();
 			for(int c=0; c<cols; c++) {
